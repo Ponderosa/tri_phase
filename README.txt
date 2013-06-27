@@ -1,0 +1,1 @@
+This project will add new feature such as color control, stobe control, and motor profiles to the ADJ tri-phase. A new micro (Atmega164A) will replace the old Atmega16. 
