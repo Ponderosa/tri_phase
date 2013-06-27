@@ -35,6 +35,7 @@ volatile uint8_t  f_rotation;								// future values from dmx
 volatile uint16_t triphase_address;							// current DMX address
 volatile uint8_t  user_input;								// current button press
 volatile uint8_t  digit1, digit2, digit3, digit4, digit5;	// current LCD output
+uint16_t (*MotorUpdateTimerPtr)(uint8_t);					// function pointer for motor profile
 
 /****Fuses***/
 //FUSES =
@@ -69,6 +70,9 @@ int main(void)
 	/****Load Previous Settings from EEPROM****/
 	while(!eeprom_is_ready());
 	triphase_address = eeprom_read_word(EEPROM_DMX_ADDRESS);
+	
+	//to be taken out after UI update to choose motor profile
+	MotorUpdateTimerPtr = &MotorTimerUpdate1;
 	
 	sei();							// Enable global interrupts
 	
