@@ -225,7 +225,7 @@ uint8_t MotorPWMDuty(uint8_t sin_loc)
 * 
 **********************************************************/
 
-uint16_t MotorTimerUpdate(uint8_t speed) 
+uint16_t MotorTimerUpdate1(uint8_t speed) 
 {
 	/****Variables****/
 	uint16_t temp;

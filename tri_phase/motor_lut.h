@@ -11,7 +11,7 @@
 #define TRIPHASE_LUT_H_
 
 /****Function Protoypes****/
-uint16_t MotorTimerUpdate(uint8_t);
+uint16_t MotorTimerUpdate1(uint8_t);
 uint16_t MotorTimerUpdate2(uint8_t);
 uint8_t MotorPWMDuty(uint8_t);
 

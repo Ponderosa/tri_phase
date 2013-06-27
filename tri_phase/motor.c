@@ -61,8 +61,8 @@ void MotorService(void)
 			vref_counter = 0;
 		}
 		rotation -= 10;
-		OCR1AH = (uint8_t) (MotorTimerUpdate(rotation) >> 8);
-		OCR1AL = (uint8_t) (MotorTimerUpdate(rotation));
+		OCR1AH = (uint8_t) (MotorTimerUpdate1(rotation) >> 8);
+		OCR1AL = (uint8_t) (MotorTimerUpdate1(rotation));
 	}
 	else if ((rotation > 134) && (rotation < 246))	// counter clockwise rotation
 	{
@@ -72,8 +72,8 @@ void MotorService(void)
 			vref_counter = (PWM_UNIQUE - 1) * 4 - 1;
 		}
 		rotation = (uint8_t) ((((int8_t) (rotation - 135)) * -1) + 110);
-		OCR1AH = (uint8_t) (MotorTimerUpdate(rotation) >> 8);
-		OCR1AL = (uint8_t) (MotorTimerUpdate(rotation));
+		OCR1AH = (uint8_t) (MotorTimerUpdate1(rotation) >> 8);
+		OCR1AL = (uint8_t) (MotorTimerUpdate1(rotation));
 	}
 	
 	/****Set Motor Postion****/
